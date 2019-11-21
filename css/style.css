@@ -12,10 +12,9 @@ body{
     
 
 }
-td{   
-    box-sizing:border-box;
-    width:35px;
-    height:35px;
+td{   box-sizing: border-box;
+    width:4vw;
+    height:4vh;
 }
 .hidden {
     background-color: orange;
