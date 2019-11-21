@@ -1,0 +1,94 @@
+body{
+    background-color: #111;
+    color:orange;
+    text-align:center;
+    margin:0;
+    box-sizing: border-box;
+    font-family:impact;
+}
+.board-container{
+    display:inline;
+    box-sizing: border-box;
+    
+
+}
+td{   
+    width:4vw;
+    height:4vh;
+}
+.hidden {
+    background-color: orange;
+}
+.transparent{
+    background-color:transparent;
+    border:1px solid black;
+    color:black;
+}
+
+.timer ,.counter{
+    display:inline-block;
+    width:10vw;
+    font-size:.8em;
+    left:400px;
+    color:red;
+    background-color:#888;
+    border:1px solid white;
+}
+.game-container{
+    position:fixed;
+    padding:30px;
+    border:10px groove white;
+    width:50vw;
+    height:80vh;
+    left:20%;
+    background-color: lightslategrey;
+    cursor: pointer
+
+}
+.shown{
+    background-color: lightgray;
+    border:1px solid black;
+}
+.hints{
+    height:30px;
+}
+.hinted {
+    border:2px solid red;
+}
+.modal{
+    width:100vw;
+    height:100vh;
+    background-color: blue;
+    line-height:20vh;
+    position:fixed;
+    top:0vh;
+}
+.level{
+    position:relative;
+    left:35vw;
+    margin:10px;
+    border-radius:10px;
+    color:red;
+    background-color: lightblue;
+    width: 30vw;
+    line-height: 10vh;
+    border:1px solid black;
+    font-size: 20px;
+}
+.level:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+.welcome {
+    font-size: 40px;
+}
+.winLoose{
+    position:absolute;
+    bottom:0vh;
+    left:8vw;
+    width:40vw;
+    line-height:30px;
+    background-color: rgb(17, 0, 255);
+    font-size:2em;
+    color: rgb(241, 50, 200);
+}
