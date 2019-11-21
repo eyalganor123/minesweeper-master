@@ -38,6 +38,12 @@ function resetGame() {
     handleModal();
 }
 
+function startTimer() {
+    BLIP.play();
+    elTimer.innerText = gTimer;
+    gTimer++;
+}
+
 function createBoard(num) {
     var board = []
     for (var i = 0; i < num; i++) {
@@ -88,9 +94,9 @@ function renderBoard() {
                 content = cell.minesAroundCount;
 
             }
-            if(gGame.level === "BEGINNER") view +=' bigCell' ;
-            if(gGame.level === "MEDIUM") view +=' mediumCell' ;
-            if(gGame.level === "EXPERT") view +=' smallCell' ;
+            if (gGame.level === "BEGINNER") view += ' bigCell';
+            if (gGame.level === "MEDIUM") view += ' mediumCell';
+            if (gGame.level === "EXPERT") view += ' smallCell';
 
             strHtml += `<td onclick="cellClicked(this,${i},${j},event)" class= '${view}'
             oncontextmenu="javascript:handleFlag(${i},${j});return false;">${content}</td>`
@@ -222,11 +228,6 @@ function handleFirstClick(i, j, bombs) {
     placeRandomBombs(i, j, gGame.bombsForLevel);
     setMinesNegsCount();
 
-}
-
-function startTimer() {
-    elTimer.innerText = gTimer;
-    gTimer++;
 }
 
 function handleFlag(i, j) {
