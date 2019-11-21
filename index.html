@@ -11,11 +11,12 @@
 
 <body onload="handleModal()">
     <div class="game-container">
-        <h1>MINESWEEPER</h1>
-        <h2>
-            <span class="counter">16</span>
-            <span class="smiley" onclick=resetGame()>😊</span>
-            <div class="timer">0</div>
+        <h1 class="title">MINESWEEPER</h1>
+        <h2 >
+            <h3 class="timerDisplay"><span>counter</span><span>timer</span></h3>
+            <span class="counter display">16</span>
+            <span class="smiley display" onclick=resetGame()>😊</span>
+            <div class="timer display">0</div>
         </h2>
         <div class="hints">💡💡💡</div>
         <table class="board-container">
@@ -27,19 +28,19 @@
     </div>
     <div class="modalContainer">
         <div class="modal">
-            <div class = "welcome">Welcome to Minesweeper
-                <div class = "leveltitle">LEVEL
-                <div class = "level" onclick="initGame(4,2)">BEGINNER</div>
-                <div class = "level" onclick="initGame(8,12)">MEDIUM</div>
-                <div class = "level" onclick="initGame(12,30)">EXPERT</div>
+            <div class="welcome">Welcome to Minesweeper
+                <div class="leveltitle">LEVEL
+                    <div class="level" onclick="initGame(4,2,event)">BEGINNER</div>
+                    <div class="level" onclick="initGame(8,12,event)">MEDIUM</div>
+                    <div class="level" onclick="initGame(12,30,event)">EXPERT</div>
                 </div>
+            </div>
+
         </div>
 
-    </div>
-
-    <script src="./js/main.js"></script>
-    <script src="./js/hints.js"></script>
-    <script src="./js/view.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/hints.js"></script>
+        <script src="./js/view.js"></script>
 </body>
 
 </html>
