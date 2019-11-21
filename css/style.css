@@ -1,94 +1,152 @@
-body{
-    background-color: #111;
-    color:orange;
-    text-align:center;
-    margin:0;
+body {
+    background-color: rgb(2, 2, 2);
+    text-align: center;
+    margin: 0;
     box-sizing: border-box;
-    font-family:impact;
+    font-family: impact;
 }
-.board-container{
-    display:inline;
+
+.board-container {
+    display: inline;
     box-sizing: border-box;
-    
 
 }
-td{   box-sizing: border-box;
-    width:4vw;
-    height:4vh;
+
+.title {
+    position:fixed;
+    color: rgb(248, 246, 248);
+    margin:0px;
+    font-size:3em;
+    /* left:45vw; */
+    width:50vw;
+    top:4vh;
 }
+
+td {
+    box-sizing: border-box;
+    width: 4vw;
+    height: 4vh;
+}
+
 .hidden {
     background-color: orange;
-}
-.transparent{
-    background-color:transparent;
-    border:1px solid black;
-    color:black;
+    border:2px solid black;
+
 }
 
-.timer ,.counter{
-    display:inline-block;
-    width:10vw;
-    font-size:.8em;
-    left:400px;
-    color:red;
-    background-color:#888;
-    border:1px solid white;
+.transparent {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
 }
-.game-container{
-    position:fixed;
-    padding:30px;
-    border:10px groove white;
-    width:50vw;
-    height:80vh;
-    left:20%;
+
+.timer,
+.counter {
+    display: inline-block;
+    width: 10vw;
+    font-size: .8em;
+    left: 400px;
+    color: red;
+    background-color: #888;
+    border: 1px solid white;
+    box-shadow: inset 0px 0px 4px 0px black;
+
+}
+
+.game-container {
+    position: fixed;
+    padding: 30px;
+    border: 10px groove white;
+    width: 50vw;
+    height: 80vh;
+    left: 20vw;
+    top: 3vh;
     background-color: lightslategrey;
     cursor: pointer
+}
 
-}
-.shown{
+.shown {
     background-color: lightgray;
-    border:1px solid black;
+    border: 1px solid black;
 }
-.hints{
-    height:30px;
+
+.hints {
+    height: 30px;
 }
+
 .hinted {
-    border:2px solid red;
+    border: 2px solid red;
 }
-.modal{
-    width:100vw;
-    height:100vh;
+
+.modal {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
     background-color: blue;
-    line-height:20vh;
-    position:fixed;
-    top:0vh;
+    line-height: 20vh;
+    position: fixed;
+    top: 0vh;
+    border: 5px solid black
 }
-.level{
-    position:relative;
-    left:35vw;
-    margin:10px;
-    border-radius:10px;
-    color:red;
+
+.level {
+    position: relative;
+    left: 33vw;
+    margin: 10px;
+    border-radius: 10px;
+    color: red;
     background-color: lightblue;
     width: 30vw;
     line-height: 10vh;
-    border:1px solid black;
+    border: 1px solid black;
     font-size: 20px;
 }
+
 .level:hover {
     background-color: orange;
     cursor: pointer;
 }
+
 .welcome {
-    font-size: 40px;
+    font-size: 5em;
+    color: orange;
 }
-.winLoose{
-    position:absolute;
-    bottom:0vh;
-    left:8vw;
-    width:40vw;
-    line-height:30px;
+
+.winLoose {
+    position: absolute;
+    bottom: 0vh;
+    left: 10vw;
+    width: 40vw;
+    line-height: 30px;
     background-color: rgb(17, 0, 255);
-    font-size:2em;
+    font-size: 2em;
     color: rgb(241, 50, 200);
+}
+
+h3 span {
+    margin: 3vw;
+}
+
+.bigCell {
+    width: 12vw;
+    height: 12vh;
+    font-size:3em;
+}
+
+.mediumCell {
+    width: 6vw;
+    height: 6vh;
+    font-size:2em;
+}
+
+.smallCell {
+    width: 3.5vw;
+    height: 3.5vh;
+    font-size:1em;
+}
+.display{
+    font-size:5em;
+}
+.timerDisplay{
+    font-size:1em;
 }
