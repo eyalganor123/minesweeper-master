@@ -164,10 +164,10 @@ function gameOver(status) {
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
 
-            resetGame();
-        handleModal();
+            resetGame();debugger
 
         }, 3000);
+
     }
     else if (status === 'win'){
         document.querySelector('.smiley').innerText = '🤩';
