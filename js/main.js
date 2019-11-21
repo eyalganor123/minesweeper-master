@@ -18,6 +18,7 @@ var elTimer = document.querySelector('.timer');
 
 
 function initGame(num, bombs, event) {
+    play(EXPLOSION);
     gGame.level = event.target.innerText;
     console.log(gGame);
     hintCount = 3;
@@ -39,7 +40,7 @@ function resetGame() {
 }
 
 function startTimer() {
-    BLIP.play();
+    play(BLIP);
     elTimer.innerText = gTimer;
     gTimer++;
 }
@@ -169,12 +170,13 @@ function gameOver(status) {
         showAllBombs();
         document.querySelector('.smiley').innerText = '😞';
         document.querySelector('.winLoose').innerText = 'YOU ARE DEAD';
+        play(EXPLOSION);
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
 
             resetGame();
 
-        }, 3000);
+        }, 4000);
 
     } else if (status === 'win') {
         document.querySelector('.smiley').innerText = '🤩';

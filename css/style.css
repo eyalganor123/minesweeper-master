@@ -17,9 +17,9 @@ body {
     color: rgb(248, 246, 248);
     margin: 0px;
     font-size: 2em;
-    /* left:45vw; */
+    left:25vw;
     width: 50vw;
-    top: 4vh;
+    top: 2vh;
 }
 
 td {
@@ -54,13 +54,12 @@ td {
 }
 
 .game-container {
+    box-sizing: border-box;
     position: fixed;
     padding: 30px;
     border: 10px groove white;
-    width: 50vw;
-    height: 80vh;
-    left: 20vw;
-    top: 3vh;
+    width: 100vw;
+    height: 100vh;
     background-color: lightslategrey;
     cursor: pointer
 }
@@ -114,11 +113,11 @@ td {
 }
 
 .winLoose {
-    position: absolute;
-    bottom: 0vh;
+    position: fixed;
+    bottom: 3vh;
     left: 10vw;
-    width: 40vw;
-    line-height: 30px;
+    width: 80vw;
+    line-height: 20vh;
     background-color: rgb(17, 0, 255);
     font-size: 2em;
     color: rgb(241, 50, 200);
@@ -151,10 +150,17 @@ h3 span {
 .display {
     font-size: 2em;
 }
-
-.timerDisplay {
-    position: fixed;
-    font-size: 1.4em;
-    top: 1.3em;
-    left: 36vw;
+.speaker{
+    position:fixed;
+    /* background-image: url('./sounds/speaker.png'); */
+    /* width:10px; */
+    line-height: 1em;
+    z-index: 3;
+    font-size: .4em;
+    left:5vw;
+    top:5vh;
+    /* margin:2vh; */
+    /* border:1px solid black; */
+    /* border-radius:50%; */
+    /* padding:1em; */
 }

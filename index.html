@@ -13,19 +13,22 @@
     <div class="game-container">
         <h1 class="title">MINESWEEPER</h1>
         <h2>
-            <h3 class="timerDisplay"><span>counter</span><span>timer</span></h3>
+      <div class="speaker"><img class ="speaker" src="./sounds/speaker.png" alt="Smiley face" height="42" width="42" onclick = "handleMute()"></div>          
+            <h3 class="timerDisplay"></h3>
+            <span>COUNTER</span>
             <span class="counter display">16</span>
             <span class="smiley display" onclick=resetGame()>😊</span>
             <div class="timer display">0</div>
+            <span>TIMER</span>
         </h2>
         <div class="hints">💡💡💡</div>
         <table class="board-container">
             <tbody class="board">
             </tbody>
         </table>
-        <div class="winLoose"></div>
-
     </div>
+    <div class="winLoose"></div>
+
     <div class="modalContainer">
         <div class="modal">
             <div class="welcome">Welcome to Minesweeper
@@ -35,9 +38,7 @@
                     <div class="level" onclick="initGame(12,30,event)">EXPERT</div>
                 </div>
             </div>
-
         </div>
-
         <script src="./js/main.js"></script>
         <script src="./js/hints.js"></script>
         <script src="./js/view.js"></script>
