@@ -5,7 +5,8 @@ var gGame = {
     isGameOn: false,
     pointCounter: 0,
     isModalOn: false,
-    bombsForLevel: 0
+    bombsForLevel: 0,
+    level: ""
 }
 var gInterval;
 var gTimer = 0;
@@ -16,11 +17,12 @@ var elCounter = document.querySelector('.counter');
 var elTimer = document.querySelector('.timer');
 
 
-function initGame(num, bombs) {
+function initGame(num, bombs, event) {
+    gGame.level = event.target.innerText;
+    console.log(gGame);
     hintCount = 3;
     resetGame();
     renderHints(hintCount);
-    // handleModal();
     gGame.bombsForLevel = bombs;
 
     gBoard = createBoard(num);
@@ -72,7 +74,7 @@ function renderBoard() {
             if (cell.isMine === true && cell.isShown === true) {
                 content = BOMB;
             } else {
-                if (cell.minesAroundCount === 0) content = "";
+                if (cell.isShown === false) content = "";
                 else {
                     content = cell.minesAroundCount;
                 }
@@ -86,6 +88,9 @@ function renderBoard() {
                 content = cell.minesAroundCount;
 
             }
+            if(gGame.level === "BEGINNER") view +=' bigCell' ;
+            if(gGame.level === "MEDIUM") view +=' mediumCell' ;
+            if(gGame.level === "EXPERT") view +=' smallCell' ;
 
             strHtml += `<td onclick="cellClicked(this,${i},${j},event)" class= '${view}'
             oncontextmenu="javascript:handleFlag(${i},${j});return false;">${content}</td>`
@@ -98,9 +103,6 @@ function renderBoard() {
     board.innerHTML = strHtml;
     elCounter.innerText = gGame.pointCounter;
 }
-
-
-
 
 function cellClicked(that, i, j, event) {
     var currCell = gBoard[i][j];
@@ -168,16 +170,15 @@ function gameOver(status) {
 
         }, 3000);
 
-    }
-    else if (status === 'win'){
+    } else if (status === 'win') {
         document.querySelector('.smiley').innerText = '🤩';
-    document.querySelector('.winLoose').innerText = 'YOU WON!!!!';
-    setTimeout(function () {
-        document.querySelector('.winLoose').innerText = '';
+        document.querySelector('.winLoose').innerText = 'YOU WON!!!!';
+        setTimeout(function () {
+            document.querySelector('.winLoose').innerText = '';
 
-        resetGame();
-    }, 3000);
-}
+            resetGame();
+        }, 3000);
+    }
 
 
     gGame.isGameOn = false;
