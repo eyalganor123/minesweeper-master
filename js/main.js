@@ -164,7 +164,7 @@ function gameOver(status) {
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
 
-            resetGame();debugger
+            resetGame();
 
         }, 3000);
 
