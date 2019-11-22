@@ -2,6 +2,7 @@
 
 const BLIP = new Audio('./sounds/blip.wav');
 const EXPLOSION = new Audio('./sounds/explosion.wav');
+const WIN = new Audio('./sounds/win.wav');
 var gMute = true;
 
 

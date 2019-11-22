@@ -9,17 +9,19 @@ body {
 .board-container {
     display: inline;
     box-sizing: border-box;
-
 }
 
 .title {
     position: fixed;
-    color: rgb(248, 246, 248);
-    margin: 0px;
-    font-size: 2em;
+    color: rgb(247, 245, 243);
+bottom:1.8vh;
+    /* left:40vw; */
+    /* margin: 0px; */
+    font-size: 1em;
     left:25vw;
-    width: 50vw;
-    top: 2vh;
+    /* width: 50vw; */
+    /* top: 2vh; */
+    font-size:2em;
 }
 
 td {
@@ -28,11 +30,7 @@ td {
     height: 4vh;
 }
 
-.hidden {
-    background-color: orange;
-    border: 2px solid black;
 
-}
 
 .transparent {
     background-color: transparent;
@@ -61,20 +59,29 @@ td {
     width: 100vw;
     height: 100vh;
     background-color: lightslategrey;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .shown {
+    box-sizing: border-box;
     background-color: lightgray;
     border: 1px solid black;
-    width: 100px;
+    width: 1em;
+    height: 1em;
+}
+.hidden {
+    box-sizing: border-box;
+    background-color: orange;
+    border: 2px solid black;
+    width: 1em;
+    height: 1em;
 }
 
 .hints {
     position:fixed;
-    top:4vh;
+    top:2vh;
     left:88vw;
-    font-size: 2.5em;
+    font-size: 2em;
     
 }
 
@@ -112,14 +119,14 @@ td {
 }
 
 .welcome {
-    font-size: 4em;
+    font-size: 2em;
     color: orange;
     margin-top:.1em;
 }
 .level-title{
-    margin:2em;
+    margin:1em;
     color:red;
-    font-size:2em;
+    font-size:1.4em;
 }
 
 .winLoose {
@@ -133,9 +140,6 @@ td {
     color: rgb(241, 50, 200);
 }
 
-h3 span {
-    margin: 3vw;
-}
 
 .bigCell {
     box-sizing: border-box;
@@ -145,16 +149,17 @@ h3 span {
 }
 
 .mediumCell {
+    box-sizing: border-box;
     width: 10vw;
     height: 10vh;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .smallCell {
-    /* box-sizing: border-box; */
-    width: 6.5vw;
-    height: 6.5vh;
-    font-size: 2em;
+    box-sizing: border-box;
+    width: 6vw;
+    height: 6vh;
+    font-size: 10px;
 }
 
 .display {
