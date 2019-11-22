@@ -16,6 +16,9 @@ const FLAG = '🚩'
 var elCounter = document.querySelector('.counter');
 var elTimer = document.querySelector('.timer');
 
+document.oncontextmenu = function() {
+    return false;
+  }
 
 function initGame(num, bombs, event) {
     play(EXPLOSION);
@@ -253,7 +256,7 @@ function checkForWin(i, j) {
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard.length; j++) {
             var cell = gBoard[i][j];
-            if ((cell.isMarked === true && cell.isMine === true))
+            if ((cell.isShown === false && cell.isMine === true))
                 check++;
             if (cell.isShown === true)
                 check++
