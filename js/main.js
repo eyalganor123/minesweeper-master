@@ -169,7 +169,7 @@ function gameOver(status) {
     if (status === 'dead') {
         showAllBombs();
         document.querySelector('.smiley').innerText = '😞';
-        document.querySelector('.winLoose').innerText = 'YOU ARE DEAD';
+        document.querySelector('.winLoose').innerText = '💀';
         play(EXPLOSION);
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
@@ -180,7 +180,7 @@ function gameOver(status) {
 
     } else if (status === 'win') {
         document.querySelector('.smiley').innerText = '🤩';
-        document.querySelector('.winLoose').innerText = 'YOU WON!!!!';
+        document.querySelector('.winLoose').innerText = '🏆';
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
 
