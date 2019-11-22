@@ -181,6 +181,7 @@ function gameOver(status) {
     } else if (status === 'win') {
         document.querySelector('.smiley').innerText = '🤩';
         document.querySelector('.winLoose').innerText = '🏆';
+        play(WIN);
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
 
