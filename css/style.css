@@ -11,19 +11,6 @@ body {
     box-sizing: border-box;
 }
 
-.title {
-    position: fixed;
-    color: rgb(247, 245, 243);
-bottom:1.8vh;
-    /* left:40vw; */
-    /* margin: 0px; */
-    font-size: 1em;
-    left:35vw;
-    /* width: 50vw; */
-    /* top: 2vh; */
-    font-size:2em;
-}
-
 td {
     box-sizing: border-box;
     width: 4vw;
@@ -69,6 +56,7 @@ td {
     width: 1em;
     height: 1em;
 }
+
 .hidden {
     box-sizing: border-box;
     background-color: orange;
@@ -78,11 +66,11 @@ td {
 }
 
 .hints {
-    position:fixed;
-    top:2vh;
-    left:88vw;
+    position: fixed;
+    top: 2vh;
+    left: 88vw;
     font-size: 2em;
-    
+
 }
 
 .hinted {
@@ -121,12 +109,13 @@ td {
 .welcome {
     font-size: 2em;
     color: orange;
-    margin-top:.1em;
+    margin-top: .1em;
 }
-.level-title{
-    margin:1em;
-    color:red;
-    font-size:1.4em;
+
+.level-title {
+    margin: 1em;
+    color: red;
+    font-size: 1.4em;
 }
 
 .winLoose {
@@ -165,17 +154,14 @@ td {
 .display {
     font-size: 2em;
 }
-.speaker{
-    position:fixed;
-    /* background-image: url('./sounds/speaker.png'); */
-    /* width:10px; */
+
+.speaker {
+    position: fixed;
+
     line-height: 1em;
     z-index: 3;
     font-size: .4em;
-    left:5vw;
-    top:5vh;
-    /* margin:2vh; */
-    /* border:1px solid black; */
-    /* border-radius:50%; */
-    /* padding:1em; */
+    left: 5vw;
+    top: 5vh;
+
 }
