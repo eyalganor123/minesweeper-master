@@ -84,7 +84,7 @@ function renderBoard() {
             if (cell.isMine === true && cell.isShown === true) {
                 content = BOMB;
             } else {
-                if (cell.isShown === false) content = "";
+                if (cell.isShown === false||cell.minesAroundCount === 0) content = "";
                 else {
                     content = cell.minesAroundCount;
                 }
@@ -132,9 +132,11 @@ function cellClicked(that, i, j, event) {
     }
     currCell.isShown = true;
     gGame.pointCounter++;
+    extendReveal(i,j);  
+
     checkForWin(i, j);
     renderBoard();
-    // console.log(that);
+    console.log(that);
 }
 
 function setMinesNegsCount() {
@@ -174,9 +176,13 @@ function gameOver(status) {
         document.querySelector('.smiley').innerText = '😞';
         document.querySelector('.winLoose').innerText = '💀';
         play(EXPLOSION);
+        clearInterval(gInterval);
+        gInterval = null;
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
-
+            gGame.isGameOn = false;
+            console.log('game over', status);
+         
             resetGame();
 
         }, 4000);
@@ -185,18 +191,19 @@ function gameOver(status) {
         document.querySelector('.smiley').innerText = '🤩';
         document.querySelector('.winLoose').innerText = '🏆';
         play(WIN);
+        clearInterval(gInterval);
+        gInterval = null;
         setTimeout(function () {
             document.querySelector('.winLoose').innerText = '';
-
+            gGame.isGameOn = false;
+            console.log('game over', status);
+           
             resetGame();
         }, 3000);
     }
 
 
-    gGame.isGameOn = false;
-    console.log('game over', status);
-    clearInterval(gInterval);
-    gInterval = null;
+ 
 };
 
 function showAllBombs() {
@@ -225,7 +232,7 @@ function placeRandomBombs(i, j, bombs) {
     }
 }
 
-function handleFirstClick(i, j, bombs) {
+function handleFirstClick(i, j) {
     gBoard[i][j].isShown = true;
     renderBoard();
     gGame.isGameOn = true;
@@ -233,6 +240,22 @@ function handleFirstClick(i, j, bombs) {
     gInterval = setInterval(startTimer, 1000);
     placeRandomBombs(i, j, gGame.bombsForLevel);
     setMinesNegsCount();
+    extendReveal(i,j);
+
+}
+function extendReveal(posI,posJ){
+
+    for (var i = posI - 1; i <= posI + 1; i++) {
+        if (i < 0 || i >= gBoard.length) continue;
+        for (var j = posJ - 1; j <= posJ + 1; j++) {
+            if (j < 0 || j >= gBoard.length) continue;
+            if (i === posI && j === posJ) continue;
+
+            if (gBoard[i][j].isMine === true) continue;
+            gBoard[i][j].isShown = true;
+          
+        }
+    }
 
 }
 
@@ -253,18 +276,19 @@ function handleFlag(i, j) {
 
 function checkForWin(i, j) {
     var check = 0;
+    var bombs = 0;
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard.length; j++) {
             var cell = gBoard[i][j];
             if ((cell.isShown === false && cell.isMine === true))
-                check++;
+                bombs++;
             if (cell.isShown === true)
                 check++
 
-            if (check === (gBoard.length ** 2)) gameOver('win');
+            if (check === (gBoard.length ** 2)-gGame.bombsForLevel) gameOver('win');
 
         }
 
     }
-    console.log('shown:', check);
+    console.log('shown:', check);console.log('bombs',bombs+'check',check);
 }
