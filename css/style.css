@@ -93,7 +93,7 @@ td {
     top:20vh;
     margin: 10px;
     border-radius: 10px;
-    color: red;
+    color: rgb(161, 43, 165);
     background-color: lightblue;
     line-height: 10vh;
     border: 2px solid black;
@@ -133,7 +133,7 @@ td {
     box-sizing: border-box;
     width: 15vw;
     height: 15vh;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 .mediumCell {

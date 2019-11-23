@@ -285,7 +285,7 @@ function checkForWin(i, j) {
             if (cell.isShown === true)
                 check++
 
-            if (check === (gBoard.length ** 2)-gGame.bombsForLevel) gameOver('win');
+            if (check+bombs === (gBoard.length ** 2)) gameOver('win');
 
         }
 
