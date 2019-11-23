@@ -55,6 +55,7 @@ function createBoard(num) {
                 isMine: false,
                 isMarked: false,
                 isHinted: false,
+                currHinted: false
             };
         }
     }
@@ -76,7 +77,7 @@ function renderBoard() {
             } else {
                 view = 'hidden'
             }
-
+       
             if (cell.isMine === true && cell.isShown === true) {
                 content = BOMB;
             } else {
@@ -91,9 +92,12 @@ function renderBoard() {
             }
             if (cell.isHinted === true) {
                 view = 'hinted';
-                if (cell.minesAroundCount === 0) content = ""
+                if(cell.isMine === true) content = BOMB;
+                else if (cell.minesAroundCount === 0) {content = ""}
                 else content = cell.minesAroundCount;
-
+            }
+            if (cell.currHinted === true) {
+                view = 'currHinted'
             }
             if (gGame.level === "BEGINNER") view += ' bigCell';
             if (gGame.level === "MEDIUM") view += ' mediumCell';

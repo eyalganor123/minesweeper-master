@@ -23,9 +23,7 @@ td {
     border: 1px solid black;
     color: black;
 }
-.hinted{
-    background-color: red;
-}
+
 .timer,
 .counter {
     display: inline-block;
@@ -133,7 +131,7 @@ td {
     box-sizing: border-box;
     width: 8vw;
     height: 8vh;
-    font-size: 3em;
+    font-size: 4em;
 }
 
 .smallCell {
@@ -163,4 +161,14 @@ td {
 
 .smiley {
     font-size: 8em;
+}
+
+.currHinted {
+    border: 2px dotted blue;
+    color: blue;
+    background-color: rgb(247, 246, 245);
+}
+
+.hinted {
+    background-color: lightgray;
 }

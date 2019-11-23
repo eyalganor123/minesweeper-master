@@ -38,13 +38,13 @@ function findFreeCells() {
 }
 
 function showHint(hintedCell, i, j) {
-    hintedCell.isHinted = true;  
+    hintedCell.currHinted = true;  
     showHideNegs(i, j);
     renderBoard();
     hintCount--;
     renderHints(hintCount);
     setTimeout(function () {
-        hintedCell.isHinted = false;     
+        hintedCell.currHinted = false;     
         showHideNegs(i, j);
         renderBoard();
     }, 1000);
@@ -57,8 +57,8 @@ function showHideNegs(posI, posJ) {
         for (var j = posJ - 1; j <= posJ + 1; j++) {
             if (j < 0 || j >= gBoard.length) continue;
             var neg = gBoard[i][j]
-            if (neg.isShown === false) neg.isShown = true;
-            else neg.isShown = false;
+            if (neg.isHinted === false) neg.isHinted = true;
+            else neg.isHinted = false;
 
 
             console.log(neg);
