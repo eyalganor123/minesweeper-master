@@ -17,7 +17,7 @@ function handleMute() {
     console.log(123);
 }
 
-function play(sound){
-    if(!gMute) return;
+function play(sound) {
+    if (!gMute) return;
     sound.play();
 }
