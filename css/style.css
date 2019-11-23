@@ -23,7 +23,9 @@ td {
     border: 1px solid black;
     color: black;
 }
-
+.hinted{
+    background-color: red;
+}
 .timer,
 .counter {
     display: inline-block;
@@ -68,10 +70,6 @@ td {
     left: 85vw;
     font-size: 6em;
 
-}
-
-.hinted {
-    border: 2px dotted rgb(0, 255, 42);
 }
 
 .modal {

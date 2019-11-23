@@ -56,7 +56,6 @@ function showHideNegs(posI, posJ) {
         if (i < 0 || i >= gBoard.length) continue;
         for (var j = posJ - 1; j <= posJ + 1; j++) {
             if (j < 0 || j >= gBoard.length) continue;
-            if (i === posI && j === posJ) continue;
             var neg = gBoard[i][j]
             if (neg.isShown === false) neg.isShown = true;
             else neg.isShown = false;
